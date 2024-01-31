@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import dynamic from "next/dynamic";
 import {Path} from "./constants";
-// import {useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import { FloatButton } from 'antd';
 import { FullscreenOutlined,FullscreenExitOutlined} from '@ant-design/icons';
 import {useState} from "react";
@@ -18,6 +18,7 @@ const Chat = dynamic(async () => (await import("./chat/chat")).Chat);
 const Role = dynamic(async () => (await import("./role/role")).Role);
 
 function Screen() {
+    // const =useSelector(state => state.status.tightBorder);
     const [tightBorder, setTightBorder] = useState(false);
     return (
         <div className={!tightBorder?styles.container:styles["tight-container"]}>
