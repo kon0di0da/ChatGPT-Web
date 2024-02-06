@@ -8,12 +8,14 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+// import { Router, Route, hashHistory } from 'react-router'
 import dynamic from "next/dynamic";
 import {Path} from "./constants";
 import {useSelector} from "react-redux";
 import { FloatButton } from 'antd';
 import { FullscreenOutlined,FullscreenExitOutlined} from '@ant-design/icons';
 import {useState} from "react";
+import DialogMessage from "@/app/components/dialog/dialogMessage/dialog-message";
 const Chat = dynamic(async () => (await import("./chat/chat")).Chat);
 const Role = dynamic(async () => (await import("./role/role")).Role);
 
@@ -27,10 +29,13 @@ function Screen() {
 
             {/* 路由地址 */}
             <div className={styles["window-content"]}>
-                <Routes>
-                    <Route path={Path.Home} element={<Chat/>}/>
-                    <Route path={Path.Chat} element={<Chat/>}/>
+                <Routes >
+                    <Route path={Path.Home}  element={<Chat/>}/>
+                    <Route path={Path.Chat} element={<Chat/>}>
+                        <Route path=":id" element={<DialogMessage/>}/>
+                    </Route>
                     <Route path={Path.Role} element={<Role/>}/>
+
                 </Routes>
             </div>
             {tightBorder===false?<FloatButton onClick={() => setTightBorder(!tightBorder)}

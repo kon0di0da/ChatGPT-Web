@@ -1,12 +1,8 @@
-import {GptVersion} from "@/app/components/constants";
+import {GptVersion} from "@/app/constants";
 
 export interface Dialog {
-// 头像
+    // 头像
     avatar: string;
-    // 对话ID
-    // dialogId: number;
-    // 是否阅读
-    // read: boolean;
     // 小标题
     subTitle: string;
     // 对话最后时间
@@ -26,6 +22,16 @@ export interface Message {
     role: MessageRole;
 }
 
+export interface SessionConfig {
+    gptVersion: GptVersion;
+}
+
+export enum MessageRole{
+    system = 0,
+    user = 1,
+    assistant = 2
+}
+
 export enum MessageType {
     Link = "link",
     Pic = "pic",
@@ -35,13 +41,4 @@ export enum MessageType {
 export enum MessageDirection {
     Send = 0,
     Receive,
-}
-export interface SessionConfig {
-    gptVersion: GptVersion;
-}
-
-export enum MessageRole{
-    system = 0,
-    user = 1,
-    assistant = 2
 }

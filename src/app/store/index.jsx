@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import statusReducer from './modules/statusStore'
+import statusReducer from './modules/chat-store'
 
 const store = configureStore({
     reducer: {

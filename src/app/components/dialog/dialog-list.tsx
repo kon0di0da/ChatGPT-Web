@@ -8,6 +8,7 @@ import {Input, List, Skeleton,Divider} from "antd";
 const {Search} = Input;
 import axios from "axios";
 import {useDispatch} from "react-redux";
+import { useNavigate } from 'react-router-dom';
 // 测试数据
 const dialog01: DialogType = {
     avatar: '/role/bugstack.png',
@@ -43,6 +44,7 @@ export function DialogList() {
     const [selected, setSelected] = useState<DialogType>();
     const [loading, setLoading] = useState(false);
     const [showdialog, setShowDialog] = useState<DialogType[]>([dialog03]);
+    const navigate = useNavigate();
 
 
     const loadMoreData = async () => {
@@ -52,6 +54,7 @@ export function DialogList() {
         setLoading(true);
 
         const res = await axios.get("http://localhost:3006/chatList");
+
         setShowDialog([...showdialog, ...res.data]);
         setLoading(false);
     };
@@ -105,7 +108,13 @@ export function DialogList() {
                         itemLayout="horizontal"
                         dataSource={showdialog}
                         renderItem={item => (
-                            <DialogItem dialog={item} selected={item === selected} onClick={setSelected} key={item.dialogId}/>
+                            // alert(item.title),
+                            <DialogItem dialog={item} selected={item === selected} onClick={()=>{
+                                setSelected(item)
+                                navigate(`/chat/${item.dialogId}`, {state: {title: item.title,avatar:item.avatar}})
+                                }
+                            } key={item.dialogId}
+                            />
                         )}
                     />
                 </InfiniteScroll>
