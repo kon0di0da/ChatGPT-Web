@@ -1,19 +1,15 @@
 import ReactMarkdown from "react-markdown";
 import "katex/dist/katex.min.css";
 import RemarkMath from "remark-math";
-
 import RemarkBreaks from "remark-breaks";
 import RehypeKatex from "rehype-katex";
 import RemarkGfm from "remark-gfm";
 import RehypeHighlight from "rehype-highlight";
 import { useRef, useState, RefObject, useEffect } from "react";
-
 import mermaid from "mermaid";
-
-import {LoadingOutlined} from '@ant-design/icons'
 import React from "react";
 import { useDebouncedCallback, useThrottledCallback } from "use-debounce";
-
+import LoadingIcon from "../../icons/three_dot.svg";
 export function Mermaid(props: { code: string }) {
     const ref = useRef<HTMLDivElement>(null);
     const [hasError, setHasError] = useState(false);
@@ -64,7 +60,7 @@ export function Mermaid(props: { code: string }) {
     );
 }
 
-export function PreCode(props: { children: any }) {
+export function PreCode(props: { children: any }): JSX.Element {
     const ref = useRef<HTMLPreElement>(null);
     const refText = ref.current?.innerText;
     const [mermaidCode, setMermaidCode] = useState("");
@@ -149,7 +145,7 @@ export function Markdown(
         >
             {
                 props.loading ?
-                    <LoadingOutlined />
+                    <LoadingIcon />
                     :
                     <MarkdownContent content={props.content} />
             }

@@ -1,9 +1,11 @@
-import Image from 'next/image'
-import {Home} from './components/home'
-export default async function App() {
-  return (
-    <>
-      <Home/>
-    </>
-  );
-}
+import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+
+// @ts-ignore
+const AdminApp = dynamic(() => import('@/app/components/admin/AdminApp'), {
+    ssr: false,
+});
+
+const Admin: NextPage = () => <AdminApp />;
+
+export default Admin;

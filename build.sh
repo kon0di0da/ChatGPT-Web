@@ -1,0 +1,1 @@
+docker build -t sunyu/chatgpt-web:1.0 .

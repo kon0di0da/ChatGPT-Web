@@ -1,0 +1,97 @@
+{
+  "chatList":[
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 123,
+      "read": true,
+      "subTitle": "写个java冒泡排序?",
+      "timestamp": 1643683800000,
+      "title": "普通对话",
+      "count": 1
+    },
+    {
+      "avatar": "/role/interview.png",
+      "dialogId": 124,
+      "read": true,
+      "subTitle": "Hello, how are you?",
+      "timestamp": 1643683900000,
+      "title": "面试官",
+      "count": 5
+    },
+    {
+      "avatar": "/role/psychological.png",
+      "dialogId": 125,
+      "read": true,
+      "subTitle": "吹灭别人的灯，不能照亮自己",
+      "timestamp": 1643684000000,
+      "title": "心里咨询",
+      "count": 100
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 126,
+      "read": false,
+      "subTitle": "Can you create a modern UI design?",
+      "timestamp": 1643684100000,
+      "title": "UI/UX Designer",
+      "count": 2
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 127,
+      "read": false,
+      "subTitle": "Discussing project deadlines and milestones",
+      "timestamp": 1643684200000,
+      "title": "Team Lead",
+      "count": 3
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 128,
+      "read": false,
+      "subTitle": "Providing guidance on career development",
+      "timestamp": 1643684300000,
+      "title": "Mentorship",
+      "count": 0
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 129,
+      "read": true,
+      "subTitle": "Questions about upcoming project tasks",
+      "timestamp": 1643684400000,
+      "title": "Project Discussion",
+      "count": 4
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 130,
+      "read": false,
+      "subTitle": "Discussing latest industry trends",
+      "timestamp": 1643684500000,
+      "title": "Industry Insights",
+      "count": 0
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 131,
+      "read": true,
+      "subTitle": "How can we improve our code quality?",
+      "timestamp": 1643684600000,
+      "title": "Code Quality Discussion",
+      "count": 8
+    },
+    {
+      "avatar": "/role/bugstack.png",
+      "dialogId": 132,
+      "read": true,
+      "subTitle": "Planning for the upcoming sprint",
+      "timestamp": 1643684700000,
+      "title": "Sprint Planning",
+      "count": 1
+    }
+    ]
+
+}
+
+

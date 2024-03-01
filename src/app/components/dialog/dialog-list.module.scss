@@ -13,7 +13,18 @@
 
   background-color: #ffffff;
 }
-
+.chat-item-delete {
+  position: relative;
+  top: 5px;
+  right: -15px;
+  transition: all ease 0.3s;
+  opacity: 0;
+  cursor: pointer;
+}
+.dialog-list {
+  height: 100%; /* 设置一个固定高度 */
+  overflow: scroll; /* 添加滚动条 */
+}
 #scrollableDiv{
 
   height: 400px;

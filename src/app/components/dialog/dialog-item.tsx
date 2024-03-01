@@ -1,12 +1,16 @@
 import {Avatar, List, Badge, Space} from 'antd';
 import styles from './dialog-item.module.scss';
-import { DialogType } from '@/app/types/chat';
+import { Dialog } from '@/app/types/chat';
 import dayjs from "dayjs";
+import {ChatSession} from "@/app/store/modules/chat-store";
+import DeleteIcon from "@/app/icons/delete.svg";
+import classNames    from "classnames";
 
 export interface Props {
-    dialog: DialogType;
+    session: ChatSession;
+    onClickDelete: () => void;
     selected: boolean;
-    onClick: (dialog: DialogType) => void;
+    onClick: () => void;
 }
 
 
@@ -15,13 +19,14 @@ export interface Props {
  * @constructor
  */
 export  const DialogItem = (props: Props) => {
-    const { dialog, selected, onClick } = props;
+    const {session, selected} = props;
+    const dialog = session.dialog;
     const date = new Date(dialog.timestamp);
     const timeString = dayjs(dialog.timestamp).format('HH:mm');
     return (
         <List.Item
-            className={`${styles.wrapper} ${selected ? styles.selected : ''}`}
-            onClick={() => onClick(dialog)}
+            className={classNames(styles.wrapper, selected ? styles.selected : '')}
+            onClick={() => props.onClick()}
         >
 
             <List.Item.Meta
@@ -34,7 +39,10 @@ export  const DialogItem = (props: Props) => {
                 description={dialog.subTitle}
             />
 
-            <div >{timeString}</div>
+            <div>{timeString}</div>
+            <div className={styles["chat-item-delete"]} onClickCapture={props.onClickDelete}>
+                <DeleteIcon/>
+            </div>
         </List.Item>
     );
 
